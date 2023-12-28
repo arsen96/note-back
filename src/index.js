@@ -5,8 +5,8 @@ const mongoConnection = require('../db/connections');
 const cors = require('cors')
 
 app.use(cors({
-  // origin: 'https://note-4lu4jivr6-arsen96s-projects.vercel.app'
-  origin: '*'
+  origin: 'https://note-mlkubtgnv-arsen96s-projects.vercel.app',
+  credentials: true,  
 }));
 const cookieParser = require("cookie-parser");
 
