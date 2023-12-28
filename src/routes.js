@@ -45,7 +45,7 @@ router.post("/login",async (req,res) => {
             httpOnly:false,
             secure:true,
             sameSite:'None',
-            maxAge:maxAge * 1000
+            maxAge:3600000
         })
         res.status(200).json({user});
     }catch(err){
