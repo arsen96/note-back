@@ -6,7 +6,7 @@ const cors = require('cors')
 // app.use(cors("*"));
 // app.use(cors());
 app.use(cors({
-  origin: 'https://note-qoq30npnx-arsen96s-projects.vercel.app',
+  origin: 'https://note-bi6e8zlid-arsen96s-projects.vercel.app',
   credentials: true,  
 }));
 const cookieParser = require("cookie-parser");
