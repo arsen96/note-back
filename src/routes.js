@@ -40,9 +40,9 @@ router.post("/login",async (req,res) => {
     const {email,password} = req.body;
     try{
         const user = await User.login(email,password);
-        const token  = jwt.sign({id:user._id,role:'user'},sekretkeyToken, {expiresIn:maxAge})
+        const token  = jwt.sign({id:user._id,role:'user'},sekretkeyToken, {expiresIn:maxAge * 1000})
         res.cookie("note_user",token,{
-            httpOnly:true,
+            httpOnly:false,
             secure:true,
             sameSite:'None',
             maxAge:maxAge * 1000
