@@ -44,7 +44,7 @@ router.post("/login",async (req,res) => {
         res.cookie("note_user",token,{
             httpOnly:false,
             secure:true,
-            sameSite:'lax',
+            sameSite:'None',
             maxAge:maxAge * 1000
         })
         res.status(200).json({user});
