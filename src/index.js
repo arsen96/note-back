@@ -4,11 +4,11 @@ require('dotenv').config({path:'./config.env'})
 const mongoConnection = require('../db/connections');
 const cors = require('cors')
 // app.use(cors("*"));
-app.use(cors());
-// app.use(cors({
-//   origin: 'https://note-29m9qcd2c-arsen96s-projects.vercel.app/',
-//   credentials: true,  
-// }));
+// app.use(cors());
+app.use(cors({
+  origin: 'https://note-29m9qcd2c-arsen96s-projects.vercel.app',
+  credentials: true,  
+}));
 const cookieParser = require("cookie-parser");
 //sqq
 app.use(express.json())
