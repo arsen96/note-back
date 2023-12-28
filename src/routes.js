@@ -5,7 +5,7 @@ const User = require('../db/models/Users')
 require('dotenv').config({path:'./config.env'})
 const verifyJWTToken = require('./tokenMiddleware');
 
-const sekretkeyToken = process.env.secretKeyToken;
+const sekretkeyToken = "dev";
 const maxAge = 1 * 24 * 60 * 60;
 
 
@@ -25,7 +25,7 @@ router.post("/register",async (req,res) => {
         const token  = jwt.sign({id:createdUser._id,role:'user'},sekretkeyToken, {expiresIn:maxAge})
         res.cookie("note_user",token,{
             httpOnly:false,
-            secure:false,
+            secure:true,
             sameSite:'lax',
             maxAge:maxAge * 1000
         })
@@ -43,7 +43,7 @@ router.post("/login",async (req,res) => {
         const token  = jwt.sign({id:user._id,role:'user'},sekretkeyToken, {expiresIn:maxAge})
         res.cookie("note_user",token,{
             httpOnly:false,
-            secure:false,
+            secure:true,
             sameSite:'lax',
             maxAge:maxAge * 1000
         })
