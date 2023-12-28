@@ -9,7 +9,7 @@ app.use(cors({
   credentials: true,  
 }));
 const cookieParser = require("cookie-parser");
-
+//sqq
 app.use(express.json())
 app.use(cookieParser())
 
